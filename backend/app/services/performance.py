@@ -96,7 +96,7 @@ class PerformanceAnalyzer:
 
         except Exception as e:
 
-             print("Lighthouse Error:", e))
+             print("Lighthouse Error:", e)
 
         return {
 
