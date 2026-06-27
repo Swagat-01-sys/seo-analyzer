@@ -103,11 +103,7 @@ class PerformanceAnalyzer:
             text=True,
             timeout=180
             )
-            capture_output=True,
-            text=True,
-            timeout=180
-            )
-
+            
             print("Return Code:", process.returncode)
             print("STDOUT:", process.stdout)
             print("STDERR:", process.stderr)
