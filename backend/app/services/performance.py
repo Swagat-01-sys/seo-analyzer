@@ -101,7 +101,7 @@ class PerformanceAnalyzer:
             ],
             capture_output=True,
             text=True,
-            timeout=180
+            timeout=30
             )
             
             print("Return Code:", process.returncode)
@@ -110,15 +110,20 @@ class PerformanceAnalyzer:
 
             if process.returncode == 0:
 
-                lighthouse = json.loads(
-                process.stdout.splitlines()[0]
-                )
+                lines = process.stdout.splitlines()
+
+                for line in reversed(lines):
+                    line = line.strip()
+
+                    if line.startswith("{") and line.endswith("}"):
+                        lighthouse = json.loads(line)
+                        break
 
             else:
 
                 print("Lighthouse exited with non-zero status.")
 
-        except subprocess.TimeoutExpired:
+        except subprocess.TimeoutExpired as e:
 
             print("Lighthouse timed out.")
             print (e)
