@@ -105,9 +105,16 @@ class PerformanceAnalyzer:
             )
             
             print("Return Code:", process.returncode)
-            print("STDOUT:", process.stdout)
-            print("STDERR:", process.stderr)
 
+            print("=" * 60)
+            print("STDOUT")
+            print("=" * 60)
+            print(process.stdout)
+
+            print("=" * 60)
+            print("STDERR")
+            print("=" * 60)
+            print(process.stderr)
             if process.returncode == 0:
 
                 lines = process.stdout.splitlines()
