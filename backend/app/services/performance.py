@@ -62,23 +62,41 @@ class PerformanceAnalyzer:
 
         try:
 
-            output = subprocess.check_output(
-                [
-                    "node",
-                    "lighthouse_runner.js",
-                    url
-                ],
-                cwd=".",
-                text=True
+            print("Starting Lighthouse...")
+
+            process = subprocess.run(
+            [
+            "node",
+            "lighthouse_runner.js",
+            url
+            ],
+            cwd=".",
+            capture_output=True,
+            text=True,
+            timeout=180
             )
 
-            lighthouse = json.loads(
-                output.splitlines()[0]
-            )
+            print("Return Code:", process.returncode)
+            print("STDOUT:", process.stdout)
+            print("STDERR:", process.stderr)
+
+            if process.returncode == 0:
+
+                lighthouse = json.loads(
+                process.stdout.splitlines()[0]
+                )
+
+            else:
+
+                print("Lighthouse exited with non-zero status.")
+
+        except subprocess.TimeoutExpired:
+
+            print("Lighthouse timed out.")
 
         except Exception as e:
 
-            print("Lighthouse Error:", e)
+             print("Lighthouse Error:", e))
 
         return {
 
