@@ -1,3 +1,4 @@
+import os
 import json
 import subprocess
 
@@ -61,16 +62,47 @@ class PerformanceAnalyzer:
         lighthouse = {}
 
         try:
+            print("=" * 50)
+            print("DEBUG START")
 
+            print("Current Directory:", os.getcwd())
+
+            node_version = subprocess.run(
+            ["node", "-v"],
+            capture_output=True,
+            text=True
+            )
+
+            print("Node Version:", node_version.stdout)
+            print("Node Version Error:", node_version.stderr)
+
+            node_path = subprocess.run(
+            ["which", "node"],
+            capture_output=True,
+            text=True
+            )
+
+            print("Node Path:", node_path.stdout)
+            print("Node Path Error:", node_path.stderr)
+
+            print("=" * 50)
             print("Starting Lighthouse...")
+            print("Current working directory:", os.getcwd())
+            runner = os.path.abspath("lighthouse_runner.js")
 
+            print("Runner Path:", runner)
+            print("Runner Exists:", os.path.exists(runner))
+            
             process = subprocess.run(
             [
             "node",
-            "lighthouse_runner.js",
+            runner,
             url
             ],
-            cwd=".",
+            capture_output=True,
+            text=True,
+            timeout=180
+            )
             capture_output=True,
             text=True,
             timeout=180
@@ -93,10 +125,11 @@ class PerformanceAnalyzer:
         except subprocess.TimeoutExpired:
 
             print("Lighthouse timed out.")
+            print (e)
 
         except Exception as e:
-
-             print("Lighthouse Error:", e)
+            import traceback
+            traceback.print_exc()
 
         return {
 
