@@ -79,8 +79,13 @@ function Home() {
             <URLForm onAnalyze={handleAnalyze} />
             {loading && (
                 <div className="dashboard-card">
+                    <div className="loading-spinner"></div>
+
                     <h2>🔍 Analyzing Website...</h2>
-                    <p>Please wait while we perform the SEO analysis.</p>
+                    
+                    <p>Please wait while we perform the SEO analysis.
+
+                    </p>
                 </div>
             )}
 

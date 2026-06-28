@@ -521,3 +521,61 @@ body{
     margin-top:20px;
 
 }
+.loading-card{
+    width:92%;
+    max-width:1400px;
+
+    margin:35px auto;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:60px 40px;
+
+    text-align:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.loading-card h2{
+    margin:25px 0 15px;
+
+    font-size:38px;
+
+    font-weight:700;
+}
+
+.loading-card p{
+
+    color:#666;
+
+    font-size:18px;
+
+    line-height:1.8;
+}
+.loading-spinner{
+
+    width:70px;
+    height:70px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    border:7px solid #E5E7EB;
+
+    border-top-color:#2563EB;
+
+    animation:spin .8s linear infinite;
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
