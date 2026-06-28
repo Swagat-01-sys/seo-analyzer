@@ -97,7 +97,6 @@ class PerformanceAnalyzer:
             [
             "node",
             runner,
-            url
             ],
             capture_output=True,
             text=True,
