@@ -1,107 +1,117 @@
 # 🚀 SEO Analyzer
 
-A full-stack SEO Analyzer inspired by Woorank that performs comprehensive website analysis without using any paid SEO APIs.
+<p align="center">
 
-The application analyzes any public website and generates an SEO report including Technical SEO, On-Page SEO, Performance, Content Quality, Metadata checks, and an overall SEO score.
+A modern Full Stack SEO Analysis Web Application built with **React**, **FastAPI**, **SQLAlchemy**, and **BeautifulSoup**, capable of analyzing websites for Technical SEO, Metadata, Content Quality, Performance, and providing actionable SEO recommendations.
 
----
-
-## 📌 Features
-
-### Website Analysis
-
-* Website crawling
-* HTML parsing
-* SEO audit generation
-
-### Technical SEO
-
-* HTTPS detection
-* Redirect detection
-* robots.txt detection
-* sitemap.xml detection
-* Canonical tag detection
-* Indexability check
-* Structured data detection
-
-### On-Page SEO
-
-* Title analysis
-* Meta description analysis
-* Heading hierarchy (H1-H6)
-* Image ALT analysis
-* Internal links
-* External links
-* URL analysis
-
-### Content Analysis
-
-* Word count
-* Character count
-* Readability score
-* Top keyword extraction
-* Heading hierarchy validation
-
-### Metadata Analysis
-
-* Mobile friendliness
-* Open Graph metadata
-* Twitter metadata
-* Social metadata
-
-### Performance Analysis
-
-* Response time
-* Page size
-* Server information
-* Compression
-* Cache-Control
-* Security headers
-* Google Lighthouse integration
-
-  * Performance Score
-  * Accessibility Score
-  * Best Practices Score
-  * SEO Score
-  * First Contentful Paint
-  * Largest Contentful Paint
-  * Speed Index
-  * Total Blocking Time
-  * Cumulative Layout Shift
-
-### SEO Scoring
-
-* Technical SEO Score
-* On-Page SEO Score
-* Content Score
-* Performance Score
-* Overall SEO Score (0–100)
-* SEO Grade
-* Recommendations
+</p>
 
 ---
 
-# 🏗️ Tech Stack
+## 🌐 Live Demo
 
-## Backend
+### Frontend
+https://seo-analyzer-two-xi.vercel.app
 
-* Python
-* FastAPI
-* SQLAlchemy
-* SQLite
-* BeautifulSoup4
-* Requests
-* Readability
-* Lighthouse
-* Chrome Launcher
+### Backend API
+https://seo-analyzer-lbi9.onrender.com
+
+---
+
+# ✨ Features
+
+## 🔍 Website Analysis
+
+- Website Information
+- Domain Extraction
+- HTTP Status
+- Response Time
+- Page Size
+- Compression Detection
+
+---
+
+## 📑 Metadata Analysis
+
+- Title Tag
+- Meta Description
+- Meta Keywords
+- Canonical Tag
+- Open Graph Tags
+- Twitter Cards
+
+---
+
+## ⚙ Technical SEO
+
+- HTTPS Detection
+- Robots.txt
+- Sitemap.xml
+- Structured Data
+- Canonical URL
+- Indexability
+- Security Headers
+
+---
+
+## 📝 Content Analysis
+
+- Word Count
+- Character Count
+- Readability Score
+- Keyword Frequency
+- Top Keywords
+
+---
+
+## 📈 SEO Score
+
+- Overall SEO Score
+- Technical Score
+- Metadata Score
+- Content Score
+- Performance Score
+- Recommendations
+
+---
+
+## 📊 Interactive Dashboard
+
+- Score Charts
+- Keyword Frequency Charts
+- Technical Health Panel
+- Website Information
+- Responsive UI
+
+---
+
+# 🛠 Tech Stack
 
 ## Frontend
 
-* React
-* Vite
-* Axios
-* Chart.js
-* React ChartJS 2
+- React.js
+- Axios
+- Chart.js
+- CSS3
+
+## Backend
+
+- FastAPI
+- SQLAlchemy
+- SQLite
+- BeautifulSoup4
+- Requests
+
+## Performance
+
+- Lighthouse
+- Chromium
+- Node.js
+
+## Deployment
+
+- Vercel
+- Render
 
 ---
 
@@ -109,84 +119,67 @@ The application analyzes any public website and generates an SEO report includin
 
 ```text
 seo-analyzer/
-│
-├── backend/
-│   ├── app/
-│   │   ├── routes/
-│   │   ├── services/
-│   │   ├── models/
-│   │   ├── utils/
-│   │   ├── database.py
-│   │   └── main.py
-│   │
-│   ├── lighthouse_runner.js
-│   ├── requirements.txt
-│   └── package.json
-│
+
 ├── frontend/
 │   ├── src/
 │   │   ├── components/
+│   │   ├── charts/
 │   │   ├── pages/
 │   │   ├── services/
 │   │   └── styles/
-│   │
 │   └── package.json
+│
+├── backend/
+│   ├── app/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── schemas/
+│   │   ├── services/
+│   │   └── database.py
+│   │
+│   ├── lighthouse_runner.js
+│   ├── requirements.txt
+│   ├── package.json
+│   └── Dockerfile
 │
 └── README.md
 ```
 
 ---
 
-# ⚙️ Installation
+# ⚙ Installation
 
 ## Clone Repository
 
 ```bash
-git clone https://github.com/Swagat-01-sys/seo-analyzer
+git clone https://github.com/Swagat-01-sys/seo-analyzer.git
+
 cd seo-analyzer
 ```
 
 ---
 
-## Backend Setup
+## Backend
 
 ```bash
 cd backend
 
-python -m venv venv
-
-# Windows
-venv\Scripts\activate
-
-# Linux/macOS
-source venv/bin/activate
-
 pip install -r requirements.txt
 
 npm install
-```
 
-Run Backend
-
-```bash
 uvicorn app.main:app --reload
 ```
 
-Backend URL
+Backend runs on
 
 ```
-http://127.0.0.1:8000
-```
-
-API Documentation
-
-```
-http://127.0.0.1:8000/docs
+http://localhost:8000
 ```
 
 ---
 
-## Frontend Setup
+## Frontend
 
 ```bash
 cd frontend
@@ -196,7 +189,7 @@ npm install
 npm run dev
 ```
 
-Frontend URL
+Frontend runs on
 
 ```
 http://localhost:5173
@@ -204,118 +197,117 @@ http://localhost:5173
 
 ---
 
-# 📡 API Endpoints
+# 📷 Screenshots
 
-## POST
+## 🏠 Home Page
 
-```
-POST /api/analyze
-```
-
-Request
-
-```json
-{
-  "url": "https://github.com"
-}
-```
-
-Response
-
-```json
-{
-  "job_id": 1,
-  "status": "processing"
-}
-```
+![Home](screenshots/home.png)
 
 ---
 
-## GET
+## ⏳ Analysis in Progress
 
-```
-GET /api/results/{job_id}
-```
-
-Returns
-
-* Analysis status
-* Technical SEO
-* Metadata
-* On-Page SEO
-* Content Analysis
-* Performance
-* SEO Score
+![Loading](screenshots/loading.png)
 
 ---
 
-# 📊 SEO Scoring Logic
+## 📊 Dashboard
 
-The scoring system combines multiple categories:
-
-| Category      | Weight |
-| ------------- | ------ |
-| Technical SEO | 30%    |
-| On-Page SEO   | 25%    |
-| Content       | 20%    |
-| Performance   | 25%    |
-
-The weighted scores are combined to produce an overall SEO score (0–100) and a grade (A–F).
+![Dashboard](screenshots/dashboard.png)
 
 ---
 
-# 🧠 Architecture
+## 📈 SEO Analysis
 
-```
-React Frontend
-       │
-       ▼
-FastAPI REST API
-       │
-       ▼
-Analysis Engine
-       │
-       ├── Website Crawler
-       ├── Technical Analyzer
-       ├── OnPage Analyzer
-       ├── Metadata Analyzer
-       ├── Content Analyzer
-       ├── Performance Analyzer
-       ├── Lighthouse Runner
-       └── SEO Scorer
-       │
-       ▼
-SQLite Database
-```
+![Analysis 1](screenshots/analysis1.png)
 
 ---
 
-# 📸 Screenshots
+## 📋 Detailed Report
 
-Add screenshots after deployment.
-
-Example:
-
-* Home Page
-* Analysis Dashboard
-* Score Breakdown
-* Keyword Chart
-* Recommendations
+![Analysis 2](screenshots/analysis2.png)
 
 ---
 
-# 🚀 Deployment
+## ℹ About
 
-Backend: Render
+![About](screenshots/about.png)
 
-Frontend: Vercel
+---
+
+# 📊 SEO Modules
+
+✅ Metadata Analysis
+
+✅ Technical SEO
+
+✅ Content Analysis
+
+✅ Website Information
+
+✅ Performance Analysis
+
+✅ Recommendations Engine
+
+✅ Score Generation
+
+✅ Keyword Analysis
+
+---
+
+# ⚠ Lighthouse Integration Status
+
+The project includes **Google Lighthouse** integration for advanced website performance analysis.
+
+### Local Development
+
+✔ Lighthouse executes successfully using Chromium and Node.js.
+
+### Production Deployment
+
+The application is currently deployed on the **Render Free Tier**.
+
+Because Render Free containers experience cold starts and limited execution resources, launching Chromium for Lighthouse audits may not always complete successfully.
+
+As a result, the following metrics may temporarily display **"Pending"** in the live demo:
+
+- Performance Score
+- Accessibility
+- Best Practices
+- SEO Score
+- First Contentful Paint (FCP)
+- Largest Contentful Paint (LCP)
+- Speed Index
+- Total Blocking Time (TBT)
+- Cumulative Layout Shift (CLS)
+
+This limitation affects only Lighthouse metrics.
+
+All other SEO analysis modules—including metadata analysis, technical SEO checks, content analysis, scoring, recommendations, and visualizations—are fully functional in production.
+
+---
+
+# 🚀 Future Improvements
+
+- Production-ready Lighthouse integration
+- PDF SEO Reports
+- Analysis History
+- Website Comparison
+- AI-powered SEO Suggestions
+- Dark Mode
+- Multi-page Website Crawling
+- User Authentication
 
 ---
 
 # 👨‍💻 Author
 
-Swagata Chowdhury
+ Swagata Chowdhury
 
-B.Tech CSE
+B.Tech Computer Science Engineering
 
-VisionIQ • SEO Analyzer • AI Projects
+Built using **React**, **FastAPI**, **SQLAlchemy**, **BeautifulSoup**, **Chart.js**, and **Modern Web Technologies**.
+
+---
+
+⭐ If you found this project useful, consider giving it a Star.
