@@ -18,8 +18,13 @@ import api from "../services/api";
 function Home() {
 
     const [result, setResult] = useState(null);
+    const [loading, setLoading] = useState(false);
+
+    
 
     const handleAnalyze = async (url) => {
+        setLoading(true);
+        setResult(null);
 
     try {
 
@@ -52,6 +57,7 @@ function Home() {
                 console.log("results =", report.data.results);
                 console.log("technical =", report.data.results?.technical);
                 setResult(report.data);
+                setLoading(false);
                 finished = true;
 
             }
@@ -59,7 +65,7 @@ function Home() {
         }
 
     } catch (err) {
-
+        setLoading(false);
         console.error(err);
 
     }
@@ -71,6 +77,12 @@ function Home() {
             <Hero />
 
             <URLForm onAnalyze={handleAnalyze} />
+            {loading && (
+                <div className="dashboard-card">
+                    <h2>🔍 Analyzing Website...</h2>
+                    <p>Please wait while we perform the SEO analysis.</p>
+                </div>
+            )}
 
             {result && result.results && (
 

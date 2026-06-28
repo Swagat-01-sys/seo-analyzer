@@ -32,47 +32,47 @@ function PerformanceCard({ performance }) {
 
             <div className="performance-item">
                 <span>Performance Score</span>
-                <strong>{lighthouse.performance_score ?? "-"}</strong>
+                <strong>{lighthouse.performance_score ?? "Pending"}</strong>
             </div>
 
             <div className="performance-item">
                 <span>Accessibility</span>
-                <strong>{lighthouse.accessibility_score ?? "-"}</strong>
+                <strong>{lighthouse.accessibility_score ?? "Pending"}</strong>
             </div>
 
             <div className="performance-item">
                 <span>Best Practices</span>
-                <strong>{lighthouse.best_practices_score ?? "-"}</strong>
+                <strong>{lighthouse.best_practices_score ?? "Pending"}</strong>
             </div>
 
             <div className="performance-item">
                 <span>Lighthouse SEO</span>
-                <strong>{lighthouse.seo_score ?? "-"}</strong>
+                <strong>{lighthouse.seo_score ?? "Pending"}</strong>
             </div>
 
             <div className="performance-item">
                 <span>First Contentful Paint</span>
-                <strong>{lighthouse.first_contentful_paint ?? "-"}</strong>
+                <strong>{lighthouse.first_contentful_paint ?? "Pending"}</strong>
             </div>
 
             <div className="performance-item">
                 <span>Largest Contentful Paint</span>
-                <strong>{lighthouse.largest_contentful_paint ?? "-"}</strong>
+                <strong>{lighthouse.largest_contentful_paint ?? "Pending"}</strong>
             </div>
 
             <div className="performance-item">
                 <span>Speed Index</span>
-                <strong>{lighthouse.speed_index ?? "-"}</strong>
+                <strong>{lighthouse.speed_index ?? "Pending"}</strong>
             </div>
 
             <div className="performance-item">
                 <span>Total Blocking Time</span>
-                <strong>{lighthouse.total_blocking_time ?? "-"}</strong>
+                <strong>{lighthouse.total_blocking_time ?? "Pending"}</strong>
             </div>
 
             <div className="performance-item">
                 <span>Cumulative Layout Shift</span>
-                <strong>{lighthouse.cumulative_layout_shift ?? "-"}</strong>
+                <strong>{lighthouse.cumulative_layout_shift ?? "Pending"}</strong>
             </div>
 
         </div>

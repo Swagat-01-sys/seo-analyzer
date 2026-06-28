@@ -2,13 +2,20 @@ import { useState } from "react";
 
 function URLForm({ onAnalyze }) {
     const [url, setUrl] = useState("");
+    const [loading, setLoading] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!url) return;
+        if (!url || loading) return;
 
-        onAnalyze(url);
+        setLoading(true);
+
+        try {
+        await onAnalyze(url);
+        } finally {
+        setLoading(false);
+        }
     };
 
     return (
@@ -21,8 +28,11 @@ function URLForm({ onAnalyze }) {
                 required
             />
 
-            <button type="submit">
-                Analyze
+            <button
+                type="submit"
+                disabled={loading}
+            >
+                {loading ? "Analyzing..." : "Analyze"}
             </button>
         </form>
     );
