@@ -101,7 +101,7 @@ class PerformanceAnalyzer:
             ],
             capture_output=True,
             text=True,
-            timeout=30
+            timeout=90
             )
             
             print("Return Code:", process.returncode)
