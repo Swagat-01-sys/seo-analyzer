@@ -42,7 +42,7 @@ function Home() {
 
         while (!finished) {
 
-            await new Promise(resolve => setTimeout(resolve, 2000));
+            await new Promise(resolve => setTimeout(resolve, 1000));
 
             const report = await api.get(`/results/${jobId}`);
 
@@ -78,11 +78,11 @@ function Home() {
 
             <URLForm onAnalyze={handleAnalyze} />
             {loading && (
-                <div className="dashboard-card">
+                <div className="loading-card">
                     <div className="loading-spinner"></div>
 
-                    <h2>🔍 Analyzing Website...</h2>
-                    
+                    <h2>Analyzing Website...</h2>
+
                     <p>Please wait while we perform the SEO analysis.
 
                     </p>
@@ -91,7 +91,7 @@ function Home() {
 
             {result && result.results && (
 
-                <div className="dashboard">
+                <div id="features" className="dashboard">
 
                     <ScoreCard score={result.results.score} />
 
@@ -121,6 +121,21 @@ function Home() {
             </div>
 
         )}
+
+        <section id="about" className="about-section">
+
+            <h2>About SEO Analyzer</h2>
+
+            <p>
+                 SEO Analyzer is a comprehensive web application that evaluates a website's
+                technical SEO, metadata, content quality, on-page optimization, and
+                performance. It generates an overall SEO score, highlights strengths
+                and weaknesses, and provides actionable recommendations to improve
+                search engine visibility and website quality.
+            </p>
+
+        </section>
+
         </>
     );
 }
