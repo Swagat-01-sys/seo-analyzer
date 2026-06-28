@@ -171,10 +171,10 @@ npm install
 uvicorn app.main:app --reload
 ```
 
-Backend runs on
+Swagger API
 
 ```
-http://localhost:8000
+https://seo-analyzer-lbi9.onrender.com/docs
 ```
 
 ---
@@ -189,13 +189,11 @@ npm install
 npm run dev
 ```
 
-Frontend runs on
+Live Application
 
 ```
-http://localhost:5173
+https://seo-analyzer-two-xi.vercel.app
 ```
-
----
 
 # 📷 Screenshots
 
