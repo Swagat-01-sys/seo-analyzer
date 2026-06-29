@@ -62,58 +62,23 @@ class PerformanceAnalyzer:
         lighthouse = {}
 
         try:
-            print("=" * 50)
-            print("DEBUG START")
-
-            print("Current Directory:", os.getcwd())
-
-            node_version = subprocess.run(
-            ["node", "-v"],
-            capture_output=True,
-            text=True
-            )
-
-            print("Node Version:", node_version.stdout)
-            print("Node Version Error:", node_version.stderr)
-
-            node_path = subprocess.run(
-            ["which", "node"],
-            capture_output=True,
-            text=True
-            )
-
-            print("Node Path:", node_path.stdout)
-            print("Node Path Error:", node_path.stderr)
-
-            print("=" * 50)
-            print("Starting Lighthouse...")
-            print("Current working directory:", os.getcwd())
+            
+            
             runner = os.path.abspath("lighthouse_runner.js")
 
-            print("Runner Path:", runner)
-            print("Runner Exists:", os.path.exists(runner))
             
             process = subprocess.run(
             [
             "node",
             runner,
+            url
             ],
             capture_output=True,
             text=True,
-            timeout=90
+            timeout=15
             )
             
-            print("Return Code:", process.returncode)
-
-            print("=" * 60)
-            print("STDOUT")
-            print("=" * 60)
-            print(process.stdout)
-
-            print("=" * 60)
-            print("STDERR")
-            print("=" * 60)
-            print(process.stderr)
+        
             if process.returncode == 0:
 
                 lines = process.stdout.splitlines()

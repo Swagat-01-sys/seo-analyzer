@@ -30,8 +30,11 @@ const chromeLauncher = require("chrome-launcher");
 
         console.log("STEP 3");
 
+        const url = process.argv[2];
+
         const result = await lighthouse(
-            "https://example.com",
+
+            url,
             options
         );
 
